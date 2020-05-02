@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e40801c6-ae7f-4d8f-a4c8-7b70baa9de4b" name="Default Changelist" comment="" />
+    <list default="true" id="e40801c6-ae7f-4d8f-a4c8-7b70baa9de4b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/blackreaper/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blackreaper/Board.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,16 +22,21 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1bGOeihvlmvIneT7HFVhlqMgqMB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -54,7 +63,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588255060413</updated>
-      <workItem from="1588255063966" duration="1852000" />
+      <workItem from="1588255063966" duration="5593000" />
+      <workItem from="1588320111255" duration="2112000" />
+      <workItem from="1588407422578" duration="6452000" />
     </task>
     <servers />
   </component>
@@ -62,9 +73,13 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="802" y="239" width="374" height="633" key="#com.intellij.ide.util.MemberChooser" timestamp="1588256638013">
+    <state x="802" y="239" width="374" height="633" key="#com.intellij.ide.util.MemberChooser" timestamp="1588258693487">
       <screen x="68" y="24" width="1852" height="1056" />
     </state>
-    <state x="802" y="239" width="374" height="633" key="#com.intellij.ide.util.MemberChooser/68.24.1852.1056@68.24.1852.1056" timestamp="1588256638013" />
+    <state x="802" y="239" width="374" height="633" key="#com.intellij.ide.util.MemberChooser/68.24.1852.1056@68.24.1852.1056" timestamp="1588258693487" />
+    <state x="650" y="379" key="com.intellij.ide.util.TipDialog" timestamp="1588407424293">
+      <screen x="68" y="24" width="1852" height="1056" />
+    </state>
+    <state x="650" y="379" key="com.intellij.ide.util.TipDialog/68.24.1852.1056@68.24.1852.1056" timestamp="1588407424293" />
   </component>
 </project>
