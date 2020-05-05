@@ -5,17 +5,17 @@ import java.util.Random;
 
 public class Board {
 
-    int boardSize = 4;
+    public static final int boardSize = 4;
 
-    int target = 2048;
+    public int target = 2048;
 
-    int minWinScore = 18432;
+    public int minWinScore = 18432;
 
     Random randomValue;
 
     private int[][] board;
 
-    private int score = 0;
+    private int currentScore = 0;
 
     Board() {
         board = new int[boardSize][boardSize];
@@ -84,7 +84,7 @@ public class Board {
         board = rotatedArray;
     }
 
-    private int move(Direction direction) {
+    public int move(Direction direction) {
 
         if (direction == Direction.DOWN) {
             rotateClockwise();
@@ -100,7 +100,7 @@ public class Board {
         }
 
         int points = solveLeftMove();
-        score += points;
+        currentScore += points;
 
         if (direction == Direction.DOWN) {
             rotateAntiClockwise();
@@ -154,7 +154,7 @@ public class Board {
 
     public boolean hasWon() {
 
-        if (score < minWinScore) {
+        if (currentScore < minWinScore) {
             return false;
         }
 
@@ -167,6 +167,21 @@ public class Board {
         }
 
         return false;
+
+    }
+
+    public List<Integer> getEmptyCells() {
+
+        List<Integer> emptyCellsList = null;
+        for (int i = 0; i < boardSize; i++) {
+            for (int j = 0; j < boardSize; j++) {
+                if (board[i][j] == 0) {
+                    emptyCellsList.add(i * boardSize + j);
+                }
+            }
+        }
+
+        return emptyCellsList;
 
     }
 
@@ -184,6 +199,16 @@ public class Board {
 
         return totalEmptyCells;
 
+    }
+
+    public int[][] getBoard() {
+        return board;
+    }
+
+    public void setEmptyValue(int i, int j, int value) {
+        if (board[i][j] == 0) {
+            board[i][j] = value;
+        }
     }
 
     public boolean isGameOver() {
@@ -224,6 +249,10 @@ public class Board {
         }
 
         return true;
+    }
+
+    public int getCurrentScore() {
+        return currentScore;
     }
 
     public GameStatus takeAction(Direction direction) {

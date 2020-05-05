@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e40801c6-ae7f-4d8f-a4c8-7b70baa9de4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/blackreaper/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/blackreaper/Solver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/blackreaper/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/blackreaper/Board.java" afterDir="false" />
     </list>
@@ -65,7 +66,10 @@
       <updated>1588255060413</updated>
       <workItem from="1588255063966" duration="5593000" />
       <workItem from="1588320111255" duration="2112000" />
-      <workItem from="1588407422578" duration="6452000" />
+      <workItem from="1588407422578" duration="8414000" />
+      <workItem from="1588494916010" duration="3119000" />
+      <workItem from="1588580801583" duration="608000" />
+      <workItem from="1588667634434" duration="9555000" />
     </task>
     <servers />
   </component>
@@ -77,9 +81,9 @@
       <screen x="68" y="24" width="1852" height="1056" />
     </state>
     <state x="802" y="239" width="374" height="633" key="#com.intellij.ide.util.MemberChooser/68.24.1852.1056@68.24.1852.1056" timestamp="1588258693487" />
-    <state x="650" y="379" key="com.intellij.ide.util.TipDialog" timestamp="1588407424293">
+    <state x="650" y="379" key="com.intellij.ide.util.TipDialog" timestamp="1588667888216">
       <screen x="68" y="24" width="1852" height="1056" />
     </state>
-    <state x="650" y="379" key="com.intellij.ide.util.TipDialog/68.24.1852.1056@68.24.1852.1056" timestamp="1588407424293" />
+    <state x="650" y="379" key="com.intellij.ide.util.TipDialog/68.24.1852.1056@68.24.1852.1056" timestamp="1588667888216" />
   </component>
 </project>
