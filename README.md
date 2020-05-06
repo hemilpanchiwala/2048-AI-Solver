@@ -33,6 +33,17 @@ This algorithm is used for determining the best step to take at every stage of t
 It is a kind of backtracking algorithm used to determine the most optimal move for a player, assuming the opponent plays optimally. In the minimax algorithm, two players are called maximizer and minimizer. The maximizer tries to get the highest possible score while the minimizer oppositely tries to get the lowest possible score.
 <div align="center"><img src= "https://raw.githubusercontent.com/hemilpanchiwala/2048-AI-Solver/master/screenshots/minmax.jpg?token=AKD26VYNQGOX7KOZJZHKBKS6XRDGQ" /></div>
 
+# Want to Play?
+Just run the `Game.java` class and you get the menu for the available commands. And following the instructions, you can play the game.
+
+### Available Controls:
+- `W` - Moving all tiles UP
+- `A` - Moving all tiles LEFT
+- `S` - Moving all tiles DOWN
+- `D` - Moving all tiles RIGHT
+- `h` - Autoplay the move
+- `q` - Bored!! Quit the game.
+
 # Screenshots (CLI version)
 
 <div align = "center"> 
@@ -73,17 +84,6 @@ It is a kind of backtracking algorithm used to determine the most optimal move f
 </tr>
 </table>
 </div>
-
-# Want to Play?
-Just run the `Game.java` class and you get the menu for the available commands. And following the instructions, you can play the game.
-
-### Available Controls:
-- `W` - Moving all tiles UP
-- `A` - Moving all tiles LEFT
-- `S` - Moving all tiles DOWN
-- `D` - Moving all tiles RIGHT
-- `h` - Autoplay the move
-- `q` - Bored!! Quit the game.
 
 # Accuracy
 The accuracy of the algorithm highly depends on the depth of the tree. With the depth 7 and though time of about half an minute, it achieves accuracy of winning about 70 - 80% of the games. The accuracy can be made even higher increasing the depth of the tree.
