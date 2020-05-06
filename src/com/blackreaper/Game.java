@@ -118,7 +118,7 @@ public class Game {
                     gameStatus = gameBoard.takeAction(Direction.LEFT);
                 } else if (input == 'D') {
                     gameStatus = gameBoard.takeAction(Direction.RIGHT);
-                } else if (input == ' ') {
+                } else if (input == 'h') {
                     gameStatus = gameBoard.takeAction(bestDirection);
                 } else if (input == 'q') {
                     System.out.println("Game Over!!!");
