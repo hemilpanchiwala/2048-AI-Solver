@@ -45,7 +45,7 @@ public class Board implements Cloneable {
         }
 
         int randomPosValue = emptyCells.get(randomValue.nextInt(size));
-        int random = (randomValue.nextDouble() < 0.7) ? 2 : 4;
+        int random = (randomValue.nextDouble() < 0.9) ? 2 : 4;
 
         int i = randomPosValue / boardSize;
         int j = randomPosValue % boardSize;
