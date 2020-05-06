@@ -1,5 +1,7 @@
 package com.blackreaper;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +12,7 @@ public class Solver {
         HUMAN
     }
 
-    public static Direction findBestMove(Board board, int depth) {
+    public static Direction findBestMove(Board board, int depth) throws CloneNotSupportedException {
 
         Map<String, Object> result = alphaBetaPruning(board, depth, Player.HUMAN, Integer.MIN_VALUE, Integer.MAX_VALUE);
         return (Direction) result.get("direction");
@@ -25,12 +27,12 @@ public class Solver {
 
     }
 
-    private static Map<String, Object> alphaBetaPruning(Board board, int depth, Player player, int alpha, int beta) {
+    private static Map<String, Object> alphaBetaPruning(Board board, int depth, Player player, int alpha, int beta) throws CloneNotSupportedException {
 
-        Map<String, Object> result = null;
+        Map<String, Object> result = new HashMap<>();
 
         Direction bestPossibleDirection = null;
-        int bestPossibleScore = 0;
+        int bestPossibleScore;
 
         if (board.isGameOver()) {
 
@@ -48,18 +50,16 @@ public class Solver {
             if (player == Player.HUMAN) {
                 for (Direction direction : Direction.values()) {
 
-                    Board tempBoard = new Board();
+                    Board tempBoard = (Board) board.clone();
 
                     int points = tempBoard.move(direction);
 
                     if (points == 0 && tempBoard.isEqual(board.getBoard(), tempBoard.getBoard())) {
-
                         continue;
-
                     }
 
                     Map<String, Object> currResult = alphaBetaPruning(tempBoard, depth - 1, Player.COMPUTER, alpha, beta);
-                    int currScore = (int) currResult.get("score");
+                    int currScore = ((Number) currResult.get("score")).intValue();
 
                     if (currScore > alpha) {
                         alpha = currScore;
@@ -79,16 +79,16 @@ public class Solver {
                 int[] possibleValues = {2, 4};
 
                 loop:
-                for (int id = 0; id < possibleMoves.size(); id++) {
+                for (Integer id : possibleMoves) {
                     int row = id / Board.boardSize;
                     int column = id % Board.boardSize;
 
                     for (int possibleValue : possibleValues) {
-                        Board tempBoard = new Board();
+                        Board tempBoard = (Board) board.clone();
                         tempBoard.setEmptyValue(row, column, possibleValue);
 
                         Map<String, Object> currResult = alphaBetaPruning(tempBoard, depth - 1, Player.HUMAN, alpha, beta);
-                        int currScore = (int) currResult.get("score");
+                        int currScore = ((Number) currResult.get("score")).intValue();
 
                         if (currScore < beta) {
                             beta = currScore;
@@ -110,7 +110,7 @@ public class Solver {
         }
 
         result.put("score", bestPossibleScore);
-        result.put("directtion", bestPossibleDirection);
+        result.put("direction", bestPossibleDirection);
 
         return result;
     }
@@ -130,22 +130,21 @@ public class Solver {
 
                 for (int k = -1; k <= 1; k++) {
                     int p = i + k;
-                    if (p < 0 || p > board.length) {
+                    if (p < 0 || p >= board.length) {
                         continue;
                     }
 
                     for (int l = -1; l <= 1; l++) {
                         int q = j + l;
-                        if (q < 0 || q > board[i].length) {
+                        if (q < 0 || q >= board[i].length) {
                             continue;
                         }
 
-                        if (k != 0 && l != 0) {
-                            if (board[p][q] > 0) {
-                                totalNeighbours++;
-                                tempScore += (Math.abs(board[i][j] - board[p][q]));
-                            }
+                        if (board[p][q] > 0) {
+                            totalNeighbours++;
+                            tempScore += (Math.abs(board[i][j] - board[p][q]));
                         }
+
                     }
                 }
                 clusteringScore += (tempScore / totalNeighbours);

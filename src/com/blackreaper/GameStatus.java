@@ -13,24 +13,12 @@ public enum GameStatus {
     int code;
     String gameStatus;
 
-    GameStatus(int code, String gameStatus){
+    GameStatus(int code, String gameStatus) {
         this.code = code;
         this.gameStatus = gameStatus;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
     }
 
     public String getGameStatus() {
         return gameStatus;
-    }
-
-    public void setGameStatus(String gameStatus) {
-        this.gameStatus = gameStatus;
     }
 }

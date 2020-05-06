@@ -1,18 +1,11 @@
 package com.blackreaper;
 
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Game {
-
-    public static void showMenu() {
-        System.out.println("Welcome to AI-2048 Solver");
-        System.out.println("Here are the options:");
-        System.out.println("1. Play the game");
-        System.out.println("2. Get accuracy of the solver");
-        System.out.println("3. Quit");
-        System.out.println();
-        System.out.println("Enter here\n");
-    }
 
     public static void main(String[] args) {
         System.out.println("The great 2048 AI Solver");
@@ -38,15 +31,26 @@ public class Game {
 
                 }
             } catch (Exception e) {
+                System.out.println(e.toString());
                 System.out.println("Enter valid option!!!");
             }
         }
     }
 
-    public static void getAccuracy() {
+    public static void showMenu() {
+        System.out.println("Welcome to AI-2048 Solver");
+        System.out.println("Here are the options:");
+        System.out.println("1. Play the game");
+        System.out.println("2. Get accuracy of the solver");
+        System.out.println("3. Quit");
+        System.out.println();
+        System.out.println("Enter here\n");
+    }
+
+    public static void getAccuracy() throws CloneNotSupportedException {
 
         int noOfWins = 0;
-        int totalTestGames = 20;
+        int totalTestGames = 10;
 
         System.out.println("Running " + totalTestGames + " games");
 
@@ -82,7 +86,7 @@ public class Game {
 
     }
 
-    public static void play() {
+    public static void play() throws CloneNotSupportedException {
 
         System.out.println("Play 2048 Game");
         System.out.println("Use W for UP");
@@ -104,7 +108,9 @@ public class Game {
 
                 input = sc.next().charAt(0);
 
-                if (input == 'W') {
+                if(input == '\n' || input == '\r') {
+                    continue;
+                }else if (input == 'W') {
                     gameStatus = gameBoard.takeAction(Direction.UP);
                 } else if (input == 'S') {
                     gameStatus = gameBoard.takeAction(Direction.DOWN);

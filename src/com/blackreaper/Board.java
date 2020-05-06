@@ -1,9 +1,10 @@
 package com.blackreaper;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Board {
+public class Board implements Cloneable {
 
     public static final int boardSize = 4;
 
@@ -17,7 +18,8 @@ public class Board {
 
     private int currentScore = 0;
 
-    Board() {
+    public Board() {
+
         board = new int[boardSize][boardSize];
         randomValue = new Random();
 
@@ -27,17 +29,15 @@ public class Board {
 
     private boolean addRandomCell() {
 
-        List<Integer> emptyCells = null;
+        List<Integer> emptyCells = new ArrayList<>();
         for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {
                 if (board[i][j] == 0) {
-                    assert false;
                     emptyCells.add(i * boardSize + j);
                 }
             }
         }
 
-        assert false;
         int size = emptyCells.size();
 
         if (size == 0) {
@@ -45,14 +45,12 @@ public class Board {
         }
 
         int randomPosValue = emptyCells.get(randomValue.nextInt(size));
-        int random = (randomValue.nextDouble() < 0.9) ? 2 : 4;
+        int random = (randomValue.nextDouble() < 0.7) ? 2 : 4;
 
         int i = randomPosValue / boardSize;
         int j = randomPosValue % boardSize;
 
-        if (board[i][j] != 0) {
-            board[i][j] = random;
-        }
+        setEmptyValue(i, j, random);
 
         return true;
 
@@ -172,7 +170,7 @@ public class Board {
 
     public List<Integer> getEmptyCells() {
 
-        List<Integer> emptyCellsList = null;
+        List<Integer> emptyCellsList = new ArrayList<>();
         for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {
                 if (board[i][j] == 0) {
@@ -183,6 +181,17 @@ public class Board {
 
         return emptyCellsList;
 
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        Board copy = (Board) super.clone();
+        int[][] temp = new int[boardSize][];
+        for (int i = 0; i < boardSize; i++) {
+            temp[i] = board[i].clone();
+        }
+        copy.board = temp;
+        return copy;
     }
 
     public int getNoOfEmptyCells() {
