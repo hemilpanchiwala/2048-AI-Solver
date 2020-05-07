@@ -16,11 +16,14 @@ public class Board implements Cloneable {
 
     private int[][] board;
 
+    public int[][] tilesWeight;
+
     private int currentScore = 0;
 
     public Board() {
 
         board = new int[boardSize][boardSize];
+        tilesWeight = new int[][]{{3, 4, 5, 6}, {2, 3, 4, 5}, {1, 2, 3, 4}, {0, 1, 2, 3}};
         randomValue = new Random();
 
         addRandomCell();
@@ -262,6 +265,20 @@ public class Board implements Cloneable {
 
     public int getCurrentScore() {
         return currentScore;
+    }
+
+    public int getWeightedScore() {
+
+        int weightedScore = 0;
+
+        for (int i = 0; i < boardSize; i++) {
+            for (int j = 0; j < boardSize; j++) {
+                weightedScore += (tilesWeight[i][j] * board[i][j]);
+            }
+        }
+
+        return weightedScore;
+
     }
 
     public GameStatus takeAction(Direction direction) {

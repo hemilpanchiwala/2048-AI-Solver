@@ -18,11 +18,11 @@ public class Solver {
 
     }
 
-    private static int heuristicScore(int actualScore, int noOfEmptyCells, int clusteringScore) {
+    private static int heuristicScore(int actualScore, int clusteringScore) {
 
-        int score = actualScore + (int) Math.log(actualScore) * noOfEmptyCells - clusteringScore;
+        int score = actualScore - clusteringScore;
         int actScore = Math.min(actualScore, 1);
-        return Math.max(score, actScore);
+        return Math.max(actScore, score);
 
     }
 
@@ -43,7 +43,7 @@ public class Solver {
 
         } else if (depth == 0) {
 
-            bestPossibleScore = heuristicScore(board.getCurrentScore(), board.getNoOfEmptyCells(), getClusteringScore(board.getBoard()));
+            bestPossibleScore = heuristicScore(board.getWeightedScore(), getClusteringScore(board.getBoard()));
 
         } else {
             if (player == Player.HUMAN) {
