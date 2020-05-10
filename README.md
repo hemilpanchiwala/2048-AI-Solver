@@ -10,7 +10,7 @@ A Java-based Artificial Intelligence Solver for the game [2048](https://play2048
 - Board.java  
    - This class contains the code for the moving the pieces, calculating the score of the player, knowing the game status after taking actions, etc.  
 - Game.java  
-   - This class contains the code for playing the game and knowing the accuracy of the AI Solver by playing it for specific times.  
+   - This class contains the code for playing the game and knowing the win-rate of the AI Solver by playing it for specific times.  
 - Solver.java  
    - This class contains the main logic for solving the game. It contains the methods determining the best possible move at any specific state of the game.  
 - Direction.java  
@@ -67,7 +67,7 @@ Just run the `Game.java` class and you get the menu for the available commands. 
 </tr>  
 <tr>  
 <td>  
-<div align="center"><code>Accuracy</code></div>  
+<div align="center"><code>Win-Rate</code></div>  
 <br>  
 <div style="text-align: center;"><img src="https://raw.githubusercontent.com/hemilpanchiwala/2048-AI-Solver/master/screenshots/accuracy2.png" height=270/> </div>  
 </td>  
@@ -103,5 +103,5 @@ This solver uses two heuristics for determining the best possible value for a st
 
 Hence, the heuristic function is defined as the `score - penalty due to clustering`.
   
-# Accuracy  
-The accuracy of the algorithm highly depends on the depth of the tree. With the depth 7 and though time of about half an minute, it achieves accuracy of winning about 80 - 90% of the games. The accuracy can be made even higher increasing the depth of the tree.
+# Win-Rate  
+The win-rate of the algorithm highly depends on the depth of the tree. With the depth 7 and though time of about half an minute, it achieves winning rate of about 80 - 90% of the games. This can be made even higher increasing the depth of the tree.
